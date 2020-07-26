@@ -121,7 +121,8 @@ body {
   height: 11px;
   margin-right: 10px;
 }
-.address-text:hover .icon-mail-svg {
+.address-text:hover .icon-mail-svg,
+.address-text:focus .icon-mail-svg {
   stroke-width: 2px;
   fill: var(--accent-color);
 }
@@ -130,7 +131,8 @@ body {
   width: 10px;
   height: 15px;
 }
-.address-text:hover .icon-tel-svg {
+.address-text:hover .icon-tel-svg,
+.address-text:focus .icon-tel-svg {
   stroke-width: 2px;
   fill: var(--accent-color);
 }
@@ -710,7 +712,7 @@ body {
   /* width: calc((100% - 60) / 3); */
   margin-right: 30px;
   margin-bottom: 30px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   border: 1px solid #eeeeee;
   /* width: 370px; */
   margin: 15px;
@@ -752,17 +754,30 @@ body {
 }
 
 .portfolio .item-link {
-  display: block;
+  display: flex;
   margin-bottom: 20px;
 }
-.portfolio-item-element:hover,
-.portfolio-item-element:focus {
+.portfolio-item-element {
+  display: block;
+}
+/* .portfolio-item-element:focus,
+.portfolio-item-element:hover {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+} */
+
+.portfolio-item-link:hover,
+.portfolio-item-link:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .portfolio-item-link {
+  display: block;
+  width: 370px;
+  height: 404px;
   text-decoration: none;
 }
+
 .portfolio {
   background-color: var(--second-text-color);
 }
