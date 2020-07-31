@@ -121,6 +121,7 @@ body {
   width: 16px;
   height: 11px;
   margin-right: 10px;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 .address-text:hover .icon-mail-svg,
 .address-text:focus .icon-mail-svg {
@@ -131,6 +132,7 @@ body {
   margin-right: 10px;
   width: 10px;
   height: 15px;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 .address-text:hover .icon-tel-svg,
 .address-text:focus .icon-tel-svg {
@@ -166,6 +168,7 @@ body {
   font-size: 14px;
   line-height: 1.07;
   letter-spacing: 0.02em;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 
 .site-nav-text {
@@ -203,11 +206,13 @@ body {
 /* Герой */
 
 .hero {
+  position: relative;
   max-width: 1600px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  /* padding-top: 200px; */
+  /* padding-bottom: 200px; */
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.8),
@@ -218,7 +223,12 @@ body {
 }
 
 .hero .hero-title {
+  position: absolute;
+  top: 200px;
+  left: 50%;
   margin-bottom: 30px;
+  /* padding-top: 200px;
+  padding-bottom: 200px; */
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -227,6 +237,27 @@ body {
   text-transform: uppercase;
   color: var(--second-text-color);
   margin-top: 0px;
+
+  animation-name: heroAction, heroActionOpacity;
+  transform: translateX(-50%);
+  animation-duration: 1500ms;
+  animation-timing-function: var(--defaul-cubic-bezier);
+}
+@keyframes heroAction {
+  from {
+    transition: scale(1.15);
+  }
+  to {
+    transition: scale(1);
+  }
+}
+@keyframes heroActionOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .services-btn {
@@ -236,6 +267,9 @@ body {
 }
 
 .general-btn {
+  position: absolute;
+  top: 350px;
+  left: 50%;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -250,9 +284,25 @@ body {
   color: var(--second-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-
   border-radius: 4px;
   border: none;
+
+  animation-name: heroAcrionButton;
+  animation-timing-function: var(--defaul-cubic-bezier);
+  animation-duration: 3000ms;
+  animation-direction: alternate;
+  transform: translateX(-50%);
+}
+@keyframes heroAcrionButton {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* О нас */
@@ -367,9 +417,17 @@ body {
 }
 
 .features .features-text {
-  display: block;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 70px;
   margin-top: 0px;
   margin-bottom: 0px;
+  bottom: 0;
+  left: 0;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -377,8 +435,11 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--second-text-color);
+  background: rgba(47, 48, 58, 0.8);
 }
+
 .features-container {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -402,9 +463,11 @@ body {
   margin-top: 0px;
   margin-bottom: 50px;
 }
+
 .our-team-item-list:not(:last-child) {
   margin-right: 30px;
 }
+
 .our-team-item-list {
   background-color: var(--second-text-color);
   padding-bottom: 24px;
@@ -412,6 +475,7 @@ body {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
 }
+
 .our-team-item-photo {
   margin-bottom: 30px;
 }
@@ -453,6 +517,7 @@ body {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 .icon-container-link:hover .our-team-social-svg,
 .icon-container-link:focus .our-team-social-svg {
@@ -464,6 +529,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 .icon-container-link:hover,
 .icon-container-link:focus {
@@ -494,6 +560,7 @@ body {
   height: 90px;
   border: solid #afb1b8 1px;
   border-radius: 4px;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 .clients-link-list:hover,
 .clients-link-list:focus {
@@ -529,6 +596,7 @@ body {
   display: flex;
   align-self: center;
   fill: #afb1b8;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 .clients-link-list:hover .clients-icon-svg,
 .clients-link-list:focus .clients-icon-svg {
@@ -587,6 +655,7 @@ body {
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
+  transition: 250ms var(--defaul-cubic-bezier);
 }
 
 .footer .footer-address-link {
